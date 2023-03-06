@@ -1,0 +1,14 @@
+<legend><h1>{{ mainmenu.main_menu_title }}</h1></legend>
+{% if mainmenu %}
+    {% if mainmenu.submenu_set.all %}
+        <ul>
+        {% for submenu in mainmenu.submenu_set.all %}
+            <li>{{ submenu.sub_menu_title }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No sub menu available.</p>
+    {% endif %}
+{% else %}
+    <p>No menu available.</p>
+{% endif %}

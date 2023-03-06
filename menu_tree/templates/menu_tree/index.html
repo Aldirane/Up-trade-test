@@ -1,0 +1,9 @@
+{% if menu_list %}
+    <ul>
+    {% for menu in menu_list %}
+        <li><a href="{% url 'menu_tree:menu' menu.id %}">{{ menu.main_menu_title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No menus available.</p>
+{% endif %}
